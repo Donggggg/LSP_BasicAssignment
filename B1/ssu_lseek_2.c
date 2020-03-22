@@ -2,7 +2,8 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <fcntl.h> // open 함수의 oflag 인자를 위한 헤더
-#include <sys/types.h> // off_t형을 위한 헤더  
+#include <sys/types.h> // off_t형 및 mode_t형을 위한 헤더  
+#include <sys/stat.h> // mode 인자를 위한 헤더 
 
 #define CREAT_MODE (S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH) // CREAT_MODE를 기본 정의
 
