@@ -19,7 +19,7 @@ int main(void)
 
 	if (dup2(1, 4) != 4) {
 		fprintf(stderr, "dup2 call failed\n");
-		exit(!);
+		exit(1);
 	}
 
 	while ((length = read(fd, buf, BUFFER_SIZE)) > 0)
