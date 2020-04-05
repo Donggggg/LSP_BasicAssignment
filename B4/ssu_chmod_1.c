@@ -13,7 +13,7 @@ int main(void)
 		fprintf(stderr, "stat error %s\n", fname1);
 
 	// 기존모드에서 그룹의실행권한을 제외한 나머지와 &연산을 하고 user id를 부여함
-	if (chmod(fname1, (statbuf.st_mode & ~S_IXGRP) | S_ISUID) < 0) 
+	if (chmod(fname1, (statbuf.st_mode & ~S_IXGRP) | S_ISUID | S_IXUSR) < 0) 
 		fprintf(stderr, "chmod error %s\n", fname1);
 
 	// 0645로 mode 변경
