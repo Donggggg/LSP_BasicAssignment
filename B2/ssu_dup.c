@@ -17,11 +17,11 @@ int main(void)
 		exit(1);
 	}
 	fd2 = dup(fd1); // fd2에 fd1을 dup 해줌(동일함)
-	count = read(fd1, buf, 12); // 12바이트 만큼 read
+	count = read(fd2, buf, 12); // 12바이트 만큼 read
 	buf[count] = 0; // 마지막 바이트를 널로 삽입
 	printf("fd1's printf : %s\n", buf);
-	lseek(fd1, 1, SEEK_CUR); // 1바이트 이동
-	count = read(fd2, buf, 12); // 12바이트 만큼 read
+	lseek(fd2, 1, SEEK_CUR); // 1바이트 이동
+	count = read(fd1, buf, 12); // 12바이트 만큼 read
 	buf[count] =0; // 마지막 바이트를 널로 삽입
 	printf("fd2's printf : %s\n", buf);
 	exit(0);

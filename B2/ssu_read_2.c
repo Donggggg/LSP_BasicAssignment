@@ -22,7 +22,7 @@ int main(void)
 	}
 
 	count = read(fd1, buf, 25); // 25바이트 만큼 read
-	buf[count] =0; // 개행문자를 대신해 널문자 삽입
+//	buf[count] =0; // 개행문자를 대신해 널문자 삽입
 	printf("fd1's first printf : %s\n", buf);
 	lseek(fd1, 1, SEEK_CUR);
 	count = read(fd1, buf, 24); // 24바이트 만큼 read
