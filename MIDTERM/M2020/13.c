@@ -35,6 +35,8 @@ int main(void)
 
 	while (!feof(fp)) {
 		fread((char *)&tmp, sizeof(Person), 1, fp);
+		if(feof(fp))
+			break;
 		printf("%s %d %.2lf\n", tmp.name, tmp.age, tmp.height);
 	}
 
@@ -44,6 +46,8 @@ int main(void)
 
 	while (!feof(fp)) {
 		fread((char *)&tmp, sizeof(Person), 1, fp);
+		if(feof(fp))
+			break;
 		printf("%s %d %.2lf\n", tmp.name, tmp.age, tmp.height);
 	}
 
