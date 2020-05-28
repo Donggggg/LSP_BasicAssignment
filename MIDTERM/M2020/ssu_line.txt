@@ -1,0 +1,8 @@
+berry
+grape
+raisin
+apple
+watermelon
+graptefruit
+pomelo
+wordcount = 7
