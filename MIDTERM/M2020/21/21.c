@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
 			fprintf(stderr, "%s isn't here\n", argv[i]);
 			exit(1);
 		}
-		stat(argv[i], &statbuf);
+		lstat(argv[i], &statbuf);
 		print_file_type(&statbuf);
 	}
 	exit(0);

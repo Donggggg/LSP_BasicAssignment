@@ -40,13 +40,9 @@ int main(void)
 		}
 	}
 
-
 	printf("line number : %d\n", count);
 
 	close(fd);
 
 	exit(0);
-
-
-
 }

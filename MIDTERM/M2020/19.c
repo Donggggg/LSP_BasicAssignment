@@ -22,15 +22,20 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "open error for %s\n", argv[1]);
 		exit(1);
 	}
-	
+
 	buf[0] = count + 48;
 	buf[1] = '\0';
 
 	while((n = read(fd, cbuf, 5)) > 0){
 		if(buf[1] == '\0'){
-			buf[0] = count + 48;
-			buf[1] = ' ';
-			write(1, buf, 2);
+			while(count >= 10){
+				buf[0] = count;
+				count %= 10;
+				
+				if(count < 10)
+					buf[1] = ' ';
+				write(1, buf, 2);
+			}
 		}
 
 		if(strchr(cbuf, '\n') != NULL){ 
